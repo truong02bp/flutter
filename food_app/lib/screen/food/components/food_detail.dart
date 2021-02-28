@@ -28,16 +28,33 @@ class FoodDetail extends StatelessWidget {
                     placeholder: 'assets/loading.gif', image: food.imageUrl),
               ),
             ),
-            Text('Ingredients : '),
-            ListView.builder(
-                itemCount: ingredients.length,
-                itemBuilder: (context, index) {
-                  String ingredient = ingredients[index];
-                  return ListTile(
-                    leading: Text('${food.id + 1}'),
-                    title: Text('${ingredient}'),
-                  );
-                })
+            Expanded(child: Column(
+              children: [
+                Text('Ingredients : ',style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
+                ),),
+                Padding(padding: EdgeInsets.all(10)),
+                Expanded(
+                  child: ListView.builder(
+                      itemCount: ingredients.length,
+                      itemBuilder: (context, index) {
+                        String ingredient = ingredients[index];
+                        return ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Colors.pinkAccent,
+                            child: Text('${index + 1}',style: TextStyle(
+                              fontSize: 20
+                            ),),
+                          ),
+                          title: Text('$ingredient', style: TextStyle(
+                            fontSize: 20
+                          ),),
+                        );
+                      }),
+                )
+              ],
+            )),
           ],
         ));
   }
