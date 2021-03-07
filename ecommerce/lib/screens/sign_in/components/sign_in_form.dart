@@ -1,4 +1,8 @@
+import 'package:ecommerce/components/account_question.dart';
+import 'package:ecommerce/components/custom_icon.dart';
 import 'package:ecommerce/components/default_button.dart';
+import 'package:ecommerce/components/form_error.dart';
+import 'package:ecommerce/screens/forgot_password/forgot_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ecommerce/constants.dart';
@@ -14,6 +18,7 @@ class _SignInFormState extends State<SignInForm> {
   final _formKey = GlobalKey<FormState>();
   List<String> errors = [];
   bool isRememberMe = false;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -99,10 +104,13 @@ class _SignInFormState extends State<SignInForm> {
               height: getProportionateHeight(20),
             ),
             FormError(errors: errors),
-            SizedBox(height: getProportionateHeight(10),),
+            SizedBox(
+              height: getProportionateHeight(10),
+            ),
             Row(
               children: [
-                Checkbox(value: isRememberMe,
+                Checkbox(
+                    value: isRememberMe,
                     onChanged: (value) {
                       setState(() {
                         isRememberMe = value;
@@ -110,52 +118,43 @@ class _SignInFormState extends State<SignInForm> {
                     }),
                 Text('Remember me'),
                 Spacer(),
-                Text('Forgot password'),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(ForgotPasswordScreen.routeName);
+                    },
+                    child: Text(
+                      'Forgot password',
+                      style: TextStyle(color: Colors.red),
+                    )),
               ],
             ),
-            SizedBox(height: getProportionateHeight(40),),
+            SizedBox(
+              height: getProportionateHeight(40),
+            ),
             DefaultButton(
               text: 'Continue',
               press: () {
                 if (_formKey.currentState.validate())
                   _formKey.currentState.save();
               },
-            )
+            ),
+            SizedBox(
+              height: getProportionateHeight(30),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomIcon(image: "assets/icons/twitter.svg",),
+                CustomIcon(image: "assets/icons/facebook-2.svg",),
+                CustomIcon(image: "assets/icons/google-icon.svg",),
+              ],
+            ),
+            SizedBox(
+              height: getProportionateHeight(30),
+            ),
+            AccountQuestion(),
           ],
         ));
   }
 }
 
-class FormError extends StatelessWidget {
-  final List<String> errors;
-
-  FormError({@required this.errors});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: List.generate(
-          errors.length, (index) => generateError(error: errors[index])),
-    );
-  }
-
-  Row generateError({error}) {
-    return Row(
-      children: [
-        SvgPicture.asset(
-          "assets/icons/Error.svg",
-          height: getProportionateHeight(18),
-        ),
-        SizedBox(
-          height: getProportionateHeight(18),
-          width: getProportionateWidth(10),
-        ),
-        Text(
-          error,
-          style:
-              TextStyle(color: Colors.red, fontSize: getProportionateWidth(15)),
-        )
-      ],
-    );
-  }
-}

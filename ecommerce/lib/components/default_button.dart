@@ -10,7 +10,7 @@ class DefaultButton extends StatelessWidget {
   Function press;
 
 
-  DefaultButton({this.text, this.press});
+  DefaultButton({@required this.text, @required this.press});
 
   @override
   Widget build(BuildContext context) {

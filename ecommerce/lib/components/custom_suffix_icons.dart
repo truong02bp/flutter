@@ -6,7 +6,7 @@ import '../size_config.dart';
 class CustomSuffixIcon extends StatelessWidget {
   String image;
 
-  CustomSuffixIcon({this.image});
+  CustomSuffixIcon({@required this.image});
 
   @override
   Widget build(BuildContext context) {
