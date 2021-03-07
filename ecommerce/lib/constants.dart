@@ -9,5 +9,9 @@ const kPrimaryGradientColor = LinearGradient(
 );
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
-
 const kAnimationDuration = Duration(milliseconds: 200);
+
+const String EMPTY_PASSWORD_ERROR = "Please enter your password";
+const String EMPTY_EMAIL_ERROR = "Please enter your email";
+const String EMAIL_INVALID_ERROR = "Email is invalid";
+final RegExp emailRegExp = RegExp("/\S+@\S+\.\S+/");
