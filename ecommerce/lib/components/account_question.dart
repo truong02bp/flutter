@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -14,7 +15,7 @@ class AccountQuestion extends StatelessWidget {
           ),),
         GestureDetector(
           onTap: (){
-
+            Navigator.of(context).pushNamed(SignUp.routeName);
           },
           child: Text('  Sign up',
             style: TextStyle(
