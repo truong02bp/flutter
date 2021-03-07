@@ -14,4 +14,5 @@ const kAnimationDuration = Duration(milliseconds: 200);
 const String EMPTY_PASSWORD_ERROR = "Please enter your password";
 const String EMPTY_EMAIL_ERROR = "Please enter your email";
 const String EMAIL_INVALID_ERROR = "Email is invalid";
-final RegExp emailRegExp = RegExp("/\S+@\S+\.\S+/");
+const String CONFIRM_PASSWORD_ERROR = "Confirm password not like password";
+final RegExp emailRegExp = RegExp("^[a-zA-Z0-9.!#\$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*\$");

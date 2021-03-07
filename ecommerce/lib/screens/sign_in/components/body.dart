@@ -1,3 +1,6 @@
+import 'package:ecommerce/components/account_question.dart';
+import 'package:ecommerce/components/custom_banner.dart';
+import 'package:ecommerce/components/custom_icon.dart';
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/constants.dart';
 import 'package:ecommerce/screens/sign_in/components/sign_in_form.dart';
@@ -17,12 +20,7 @@ class SignInBody extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Text('Welcome back ',
-              style: TextStyle(
-                fontSize: getProportionateWidth(28),
-                color: Colors.black,
-                fontWeight: FontWeight.bold
-              ),),
+              CustomBanner(text: 'Welcome back '),
               SizedBox(height: getProportionateHeight(10),),
               Text('Sign in with your email and password \nor continue with social media',
               style: TextStyle(
@@ -32,6 +30,21 @@ class SignInBody extends StatelessWidget {
               ),
               SizedBox(height: getProportionateHeight(50),),
               SignInForm(),
+              SizedBox(
+                height: getProportionateHeight(30),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomIcon(image: "assets/icons/twitter.svg",),
+                  CustomIcon(image: "assets/icons/facebook-2.svg",),
+                  CustomIcon(image: "assets/icons/google-icon.svg",),
+                ],
+              ),
+              SizedBox(
+                height: getProportionateHeight(30),
+              ),
+              AccountQuestion(),
             ],
           ),
         ),

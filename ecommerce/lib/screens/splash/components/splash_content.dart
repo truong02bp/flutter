@@ -1,6 +1,6 @@
+import 'package:ecommerce/components/custom_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce/size_config.dart';
-import 'package:ecommerce/constants.dart';
 
 class SplashContent extends StatelessWidget {
   String text;
@@ -13,13 +13,7 @@ class SplashContent extends StatelessWidget {
     return Column(
       children: [
         Spacer(),
-        Text(
-          'TOKOTO',
-          style: TextStyle(
-              fontSize: getProportionateWidth(36),
-              color: kPrimaryColor,
-              fontWeight: FontWeight.bold),
-        ),
+        CustomBanner(text: 'ToKoTo'),
         Text(text, textAlign: TextAlign.center,),
         Spacer(flex: 2,),
         Image.asset(

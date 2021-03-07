@@ -1,4 +1,5 @@
 import 'package:ecommerce/components/account_question.dart';
+import 'package:ecommerce/components/custom_banner.dart';
 import 'package:ecommerce/components/custom_suffix_icons.dart';
 import 'package:ecommerce/components/default_button.dart';
 import 'package:ecommerce/components/form_error.dart';
@@ -26,13 +27,7 @@ class _BodyState extends State<Body> {
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            Text(
-              'Forgot Password',
-              style: TextStyle(
-                  fontSize: getProportionateWidth(28),
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold),
-            ),
+            CustomBanner(text: 'Forgot Password'),
             SizedBox(
               height: getProportionateHeight(20),
             ),

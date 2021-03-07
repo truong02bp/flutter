@@ -52,12 +52,12 @@ class _SignInFormState extends State<SignInForm> {
                     });
                   }
                   return "";
-                } else if (!emailRegExp.hasMatch(value) &&
-                    !errors.contains(EMAIL_INVALID_ERROR)) {
-                  setState(() {
-                    message = EMAIL_INVALID_ERROR;
-                    errors.add(message);
-                  });
+                } else if (!emailRegExp.hasMatch(value)) {
+                  if (!errors.contains(EMAIL_INVALID_ERROR))
+                    setState(() {
+                      message = EMAIL_INVALID_ERROR;
+                      errors.add(message);
+                    });
                   return "";
                 }
                 return null;
@@ -124,7 +124,8 @@ class _SignInFormState extends State<SignInForm> {
                 Spacer(),
                 GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed(ForgotPasswordScreen.routeName);
+                      Navigator.of(context)
+                          .pushNamed(ForgotPasswordScreen.routeName);
                     },
                     child: Text(
                       'Forgot password',
@@ -144,23 +145,7 @@ class _SignInFormState extends State<SignInForm> {
                 }
               },
             ),
-            SizedBox(
-              height: getProportionateHeight(30),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomIcon(image: "assets/icons/twitter.svg",),
-                CustomIcon(image: "assets/icons/facebook-2.svg",),
-                CustomIcon(image: "assets/icons/google-icon.svg",),
-              ],
-            ),
-            SizedBox(
-              height: getProportionateHeight(30),
-            ),
-            AccountQuestion(),
           ],
         ));
   }
 }
-
