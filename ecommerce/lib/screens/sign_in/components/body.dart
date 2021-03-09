@@ -14,38 +14,40 @@ class SignInBody extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              CustomBanner(text: 'Welcome back '),
-              SizedBox(height: getProportionateHeight(10),),
-              Text('Sign in with your email and password \nor continue with social media',
-              style: TextStyle(
-                fontSize: getProportionateWidth(14),
-              ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: getProportionateHeight(50),),
-              SignInForm(),
-              SizedBox(
-                height: getProportionateHeight(30),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomIcon(image: "assets/icons/twitter.svg",),
-                  CustomIcon(image: "assets/icons/facebook-2.svg",),
-                  CustomIcon(image: "assets/icons/google-icon.svg",),
-                ],
-              ),
-              SizedBox(
-                height: getProportionateHeight(30),
-              ),
-              AccountQuestion(),
-            ],
+      child: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                CustomBanner(text: 'Welcome back '),
+                SizedBox(height: getProportionateHeight(10),),
+                Text('Sign in with your email and password \nor continue with social media',
+                style: TextStyle(
+                  fontSize: getProportionateWidth(14),
+                ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: getProportionateHeight(50),),
+                SignInForm(),
+                SizedBox(
+                  height: getProportionateHeight(30),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomIcon(image: "assets/icons/twitter.svg",),
+                    CustomIcon(image: "assets/icons/facebook-2.svg",),
+                    CustomIcon(image: "assets/icons/google-icon.svg",),
+                  ],
+                ),
+                SizedBox(
+                  height: getProportionateHeight(30),
+                ),
+                AccountQuestion(),
+              ],
+            ),
           ),
         ),
       ),

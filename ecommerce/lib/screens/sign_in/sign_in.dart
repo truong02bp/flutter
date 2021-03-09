@@ -1,7 +1,7 @@
 import 'package:ecommerce/screens/sign_in/components/body.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignIn extends StatelessWidget {
   static final String routeName = "/sign-in";
 
   @override

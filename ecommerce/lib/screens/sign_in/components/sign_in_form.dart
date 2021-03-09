@@ -125,7 +125,7 @@ class _SignInFormState extends State<SignInForm> {
                 GestureDetector(
                     onTap: () {
                       Navigator.of(context)
-                          .pushNamed(ForgotPasswordScreen.routeName);
+                          .pushNamed(ForgotPassword.routeName);
                     },
                     child: Text(
                       'Forgot password',
